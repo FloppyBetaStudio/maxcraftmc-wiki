@@ -1,0 +1,1 @@
+# maxcraftmc-wiki
