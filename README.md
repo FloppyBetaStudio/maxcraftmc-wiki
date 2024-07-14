@@ -1,5 +1,3 @@
-# MaxCraftMC Wiki
-
 这里是MaxCraftMC服务器的Wiki，仓库位于：[FloppyBetaStudio/maxcraftmc-wiki](https://github.com/FloppyBetaStudio/maxcraftmc-wiki/)
 
 ## 加入服务器
