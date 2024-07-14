@@ -1,0 +1,17 @@
+title: MaxCraftMC Wiki
+description: >
+  一个开放、自由、包容的Minecraft服务器的资料库
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+minima:
+  # Minima skin selection.
+  # Available skins are:
+  # classic	           Default, light color scheme.
+  # dark	             Dark variant of the classic skin.
+  # auto	             Adaptive skin based on the default classic and dark skins.
+  # solarized-light	   Light variant of solarized color scheme.
+  # solarized-dark	   Dark variant of solarized color scheme.
+  # solarized	         Adaptive skin for solarized color scheme skins.
+  skin: auto
