@@ -1,6 +1,7 @@
-title: MaxCraftMC Wiki
+title: MaxCraftMC 我的世界服务器
 description: >
-  一个开放、自由、包容的Minecraft服务器的资料库
+  MaxCraftMC是一个开放、自由、包容的Minecraft服务器。
+  这里是MaxCraftMC服务器的网站，包括了这个我的手机服务器的各种信息，旨在让更多人和我们一起玩。
 theme: minima
 plugins:
   - jekyll-feed
