@@ -16,7 +16,7 @@
 
 (此部分仅适用于MaxCraft Gen2)
 
-原版生存服：[网页地图](https://redstone.maxcraft.iruanp.com/)
+原版生存服：[网页地图](https://maxcraft-map.iruanp.com/)
 
 ## 获取帮助
 
