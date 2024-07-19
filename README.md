@@ -12,6 +12,8 @@
 
 加入服务器时的常见问题（请先阅读，如果在群内问出一些重复的常见问题可能导致大家的反感）：[新玩家指南](/新玩家指南)
 
+![image](https://github.com/user-attachments/assets/aa885adc-849e-40ac-8f9e-0db32fe9a989)
+
 ## 索引
 
 了解MaxCraft服务器的各个存档的时间顺序：[时间轴](/历史/时间轴)
