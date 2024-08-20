@@ -12,6 +12,8 @@ QQ群：953762913 （[加群链接](https://qm.qq.com/q/b96Wv9PlMQ)）
 
 加入服务器时的常见问题（请先阅读，如果在群内问出一些重复的常见问题可能导致大家的反感）：[新玩家指南](/新玩家指南)
 
+在服务器中的玩家都必须遵守：[MaxCraftMC服务器大宪章](/files/charter)中的规定
+
 ![玩家合照](https://github.com/user-attachments/assets/e0c9b178-7b5d-4d0e-a899-92ee89e02dfb)
 
 ## 索引
