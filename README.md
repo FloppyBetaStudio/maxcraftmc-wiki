@@ -6,6 +6,8 @@
 
 ## 加入服务器
 
+服务器地址详见：[服务器地址](https://maxcraft.iruanp.com/files/address)
+
 QQ群：953762913 （[加群链接](https://qm.qq.com/q/b96Wv9PlMQ)）
 
 我们的QQ群同时也是一个开放的社区，大家可以在这里讨论各种游戏。
