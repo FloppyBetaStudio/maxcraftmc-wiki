@@ -1,4 +1,4 @@
-**MaxCraftMC服务器连接地址**
+# MaxCraftMC服务器连接地址
 
 基岩版：mcbe.iruanp.com 端口22888
 
