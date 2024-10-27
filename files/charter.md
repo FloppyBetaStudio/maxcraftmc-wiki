@@ -1,4 +1,4 @@
-**MaxCraftMC服务器大宪章**
+# MaxCraftMC服务器大宪章
 
 ## 一、服务器简介
 
