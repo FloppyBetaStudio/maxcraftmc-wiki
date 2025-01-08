@@ -1,4 +1,7 @@
-MaxCraft Gen2
+---
+title: "MaxCraft Gen2"
+date: 2024-01-01
+---
 
 **MaxCraft Gen2**在2024年6月20日开服，为MaxCraft 新的正式周目。同时具有原版生存和末日生存两个玩法且以两个独立子服为形式呈现。  
 

@@ -1,4 +1,7 @@
-# MaxCraft 服务器历史时间轴
+---
+title: "MaxCraft 服务器历史时间轴"
+date: 2024-01-01
+---
 
 **一周目[正式周目]** 
 开始：2019/11/22
@@ -61,7 +64,7 @@
 
 **MaxCraft Gen2[正式周目]**
 
-[查看详情](/历史/MaxCraft_Gen2)
+[查看详情](/posts/history/MaxCraft_Gen2)
 
 开始：2024/6/20
 

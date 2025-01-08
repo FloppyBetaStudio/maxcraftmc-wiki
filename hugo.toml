@@ -1,0 +1,131 @@
+baseURL = 'https://maxcraft.iruanp.com/'
+languageCode = 'zh-cn'
+title = 'MaxCraftMC 我的世界服务器'
+theme = 'tailbliss'
+
+DefaultContentLanguage = 'zh-cn'
+enableEmoji = true
+enableGitInfo = true
+enableRobotsTXT = true
+canonifyURLs = false
+paginate = 9
+darkmode_js = ['assets/js/darkmode.js']
+enableInlineShortcodes = true
+
+themesDir = "themes"
+contentDir = "content"
+ignoreFiles = ["themes/tailbliss/content/*"]
+
+[params]
+author = "MaxCraftMC"
+moto = "开放、自由、包容"
+description = "MaxCraftMC我的世界原版服务器"
+disable_theme_toggle = false
+disable_stay_uptodate = true
+
+[params.p1]
+heading = "服务器特点"
+content = [
+    { text = "MaxCraftMC是一个开放、自由、包容的Minecraft服务器，我们始终秉持着这三个核心价值观。在这里，每位玩家都能享受到纯粹的游戏乐趣。" },
+    { text = "同时，MaxCraftMC也是一个带有一点养老色彩的服务器，我们不会更换存档，所以建筑玩家和养老玩家可以放心入驻。" },
+    { text = "并且内置一些小游戏，可以和群友们在原版生存之余一起游玩。" }
+]
+image = "images/picture1.jpg"
+
+[params.p2]
+heading = "服务器特色与玩法"
+content = [
+    { text = "我们的服务器采用原版生存玩法，注重玩家间的互动与合作。服务器内设有完善的领地系统，让玩家可以保护自己的建筑和资源，安心发展。" },
+    { text = "在这里，你可以欣赏到众多令人惊叹的建筑群，从中世纪城堡到现代都市，从东方庭院到西方教堂，每一处都凝聚着玩家们的创意与心血。" },
+    { text = "除了建筑，我们也鼓励玩家发展红石技术。服务器中有多个大型红石农场和自动化设施，这些都是玩家们智慧的结晶。" },
+    { text = "为了促进玩家间的交流，我们不定期在服务器内举办赛事、探索活动等丰富多彩的社区活动。在这里，每个玩家都能找到志同道合的朋友，一起创造属于自己的传奇故事。" }
+]
+image = "images/picture2.jpg"
+
+[params.p3]
+heading = "加入我们"
+content = [
+    { text = "无论你是建筑达人、红石专家，还是刚接触Minecraft的新手，都能在MaxCraftMC找到属于自己的位置。我们的社区氛围友好，随时欢迎新的玩家加入这个大家庭。" }
+]
+links = [
+    { text = "加入服务器", url = "/address" }
+]
+image = "images/picture1.jpg"
+logos = []
+
+[params.p4]
+heading = "博客文章"
+content = [
+    { text = "MaxCraftMC是一个开放、自由、包容的Minecraft服务器。这里是MaxCraftMC服务器的网站，包括了这个我的世界服务器的各种信息，旨在让更多人和我们一起玩。" }
+]
+
+[params.social_media]
+github = { enabled = false }
+facebook = { enabled = false }
+instagram = { enabled = false }
+twitter = { enabled = false }
+
+[menu]
+[[menu.main]]
+name = "首页"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "新玩家指南"
+url = "/posts/guide"
+weight = 2
+
+[[menu.main]]
+name = "服务器规则"
+url = "/posts/charter"
+weight = 3
+
+[[menu.main]]
+name = "历史"
+url = "/posts/history/timeline"
+weight = 4
+
+[[menu.main]]
+name = "地址"
+url = "/posts/address"
+weight = 5
+
+[[menu.footer]]
+
+
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[taxonomies]
+category = "Categories"
+tag = "Tags"
+
+[privacy]
+[privacy.disqus]
+disable = false
+[privacy.googleAnalytics]
+anonymizeIP = true
+disable = false
+respectDoNotTrack = false
+useSessionStorage = false
+[privacy.instagram]
+disable = false
+simple = false
+[privacy.twitter]
+disable = false
+enableDNT = false
+simple = false
+[privacy.vimeo]
+disable = false
+enableDNT = false
+simple = false
+[privacy.youtube]
+disable = false
+privacyEnhanced = true
+
+[server.headers]
+for = "/**"
+[server.headers.values]
+Referrer-Policy = "strict-origin-when-cross-origin"

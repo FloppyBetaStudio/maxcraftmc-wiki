@@ -1,3 +1,8 @@
+---
+title: "MaxCraftMC"
+slug: "/"
+---
+
 这里是MaxCraftMC服务器的主页。MaxCraftMC是一个开放、自由、包容的Minecraft服务器。
 
 服务器支持**基岩版**或**Java版**(正版/离线)进入
@@ -32,4 +37,4 @@ QQ群：953762913 （[加群链接](https://qm.qq.com/q/b96Wv9PlMQ)）
 
 MaxCraftMC由Floppy Beta Studio团队进行维护
 
-词页面仓库位于：[FloppyBetaStudio/maxcraftmc-wiki](https://github.com/FloppyBetaStudio/maxcraftmc-wiki/)
+此页面仓库位于：[FloppyBetaStudio/maxcraftmc-wiki](https://github.com/FloppyBetaStudio/maxcraftmc-wiki/)

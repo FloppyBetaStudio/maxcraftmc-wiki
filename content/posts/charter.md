@@ -1,4 +1,7 @@
-# MaxCraftMC服务器大宪章
+---
+title: "MaxCraftMC服务器大宪章"
+date: 2024-01-01
+---
 
 ## 一、服务器简介
 
