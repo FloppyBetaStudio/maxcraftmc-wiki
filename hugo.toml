@@ -8,9 +8,11 @@ enableEmoji = true
 enableGitInfo = true
 enableRobotsTXT = true
 canonifyURLs = false
-paginate = 9
 darkmode_js = ['assets/js/darkmode.js']
 enableInlineShortcodes = true
+
+[pagination]
+paperSize = 9
 
 themesDir = "themes"
 contentDir = "content"
