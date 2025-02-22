@@ -1,6 +1,6 @@
 ---
 title: "MaxCraftMC"
-slug: "/"
+slug: "/detail"
 ---
 
 这里是MaxCraftMC服务器的主页。MaxCraftMC是一个开放、自由、包容的Minecraft服务器。

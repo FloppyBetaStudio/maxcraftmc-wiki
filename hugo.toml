@@ -34,6 +34,10 @@ content = [
 ]
 image = "images/picture1.jpg"
 
+[params.p1.button]
+text = "了解更多"
+url = "/about"
+
 [params.p2]
 heading = "服务器特色与玩法"
 content = [
