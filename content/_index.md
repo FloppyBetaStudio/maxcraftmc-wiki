@@ -33,6 +33,8 @@ QQ群：953762913 （[加群链接](https://qm.qq.com/q/b96Wv9PlMQ)）
 
 关于服务器中的原版特性的改动，请见：[MaxCraftMC原版生存服务器游戏规则](/redstone/gamerules/)
 
+关于该子服务器的特色，请见：[MaxCraftMC原版生存服务器特色](/redstone/features/)
+
 ### 网页地图
 
 原版生存服：[网页地图](https://maxcraft-map.iruanp.com/)
