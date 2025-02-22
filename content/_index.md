@@ -23,15 +23,23 @@ QQ群：953762913 （[加群链接](https://qm.qq.com/q/b96Wv9PlMQ)）
 
 ![玩家合照](https://github.com/user-attachments/assets/e0c9b178-7b5d-4d0e-a899-92ee89e02dfb)
 
+
+
+## MaxCraft: Redstone
+
+这是MaxCraft的原版生存服务器的代号。Redstone仅代表服务器基本能够保证原版生存特性正常工作，但任何玩家都受到这里的欢迎。
+
+需要申请白名单，申请表请见：[申请表](https://forms.office.com/r/J97QEH60X9)
+
+关于服务器中的原版特性的改动，请见：[MaxCraftMC原版生存服务器游戏规则](/redstone/gamerules/)
+
+### 网页地图
+
+原版生存服：[网页地图](https://maxcraft-map.iruanp.com/)
+
 ## 索引
 
 了解MaxCraft服务器的各个存档的时间顺序：[时间轴](/历史/时间轴)
-
-## 网页地图
-
-(此部分仅适用于MaxCraft Gen2)
-
-原版生存服：[网页地图](https://maxcraft-map.iruanp.com/)
 
 ## 关于
 
