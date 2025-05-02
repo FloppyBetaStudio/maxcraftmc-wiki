@@ -54,7 +54,7 @@ content = [
     { text = "无论你是建筑达人、红石专家，还是刚接触Minecraft的新手，都能在MaxCraftMC找到属于自己的位置。我们的社区氛围友好，随时欢迎新的玩家加入这个大家庭。" }
 ]
 links = [
-    { text = "加入服务器", url = "/address" }
+    { text = "加入服务器", url = "https://maxcraft.iruanp.com/posts/address/" }
 ]
 image = "images/picture1.jpg"
 logos = []
