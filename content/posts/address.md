@@ -12,6 +12,6 @@ QQ群：953762913 （[加群链接](https://qm.qq.com/q/b96Wv9PlMQ)）
 
 服务器地址：
 
-基岩版：mcbe.iruanp.com 端口默认
+基岩版：mcbe.iruanp.com 端口默认 ([一键加入](minecraft:?addExternalServer=MaxCraftMC|mc2.iruanp.com:26068))
 
 Java版：mcje.iruanp.com
