@@ -11,13 +11,13 @@ slug: "/detail"
 
 ## 加入服务器
 
-服务器地址详见：[服务器地址](https://maxcraft.iruanp.com/posts/address/)
+QQ群：953762913
 
-QQ群：953762913 （[加群链接](https://qm.qq.com/q/b96Wv9PlMQ)）
+{{< button url="https://maxcraft.iruanp.com/posts/address/" text="服务器地址" >}}
 
-我们的QQ群同时也是一个开放的社区，大家可以在这里讨论各种游戏。
+ {{< button url="https://qm.qq.com/q/b96Wv9PlMQ" text="加入QQ群" >}}
 
-加入服务器时的常见问题（请先阅读，如果在群内问出一些重复的常见问题可能导致大家的反感）：[新玩家指南](/posts/guide/)
+{{< button url="https://maxcraft.iruanp.com/posts/guide/" text="新玩家指南" >}}
 
 在服务器中的玩家都必须遵守：[MaxCraftMC服务器大宪章](https://maxcraft.iruanp.com/posts/charter/)中的规定
 
@@ -29,19 +29,14 @@ QQ群：953762913 （[加群链接](https://qm.qq.com/q/b96Wv9PlMQ)）
 
 这是MaxCraft的原版生存服务器的代号。Redstone仅代表服务器基本能够保证原版生存特性正常工作，但任何玩家都受到这里的欢迎。
 
-需要申请白名单，申请表请见：[申请表](https://forms.office.com/r/J97QEH60X9)
-
-关于服务器中的原版特性的改动，请见：[MaxCraftMC原版生存服务器游戏规则](/redstone/gamerules/)
-
-关于该子服务器的特色，请见：[MaxCraftMC原版生存服务器特色](/redstone/features/)
-
-### 网页地图
-
-原版生存服：[网页地图](https://maxcraft-map.iruanp.com/)
+{{< button url="https://maxcraft.iruanp.com/redstone/features/" text="特色" >}}
+{{< button url="https://forms.office.com/r/J97QEH60X9" text="申请白名单" >}}
+{{< button url="https://maxcraft.iruanp.com/redstone/gamerules/" text="特殊规则" >}}
+{{< button url="https://maxcraft-map.iruanp.com/" text="网页地图" >}}
 
 ## 索引
 
-了解MaxCraft服务器的各个存档的时间顺序：[时间轴](/历史/时间轴)
+了解MaxCraft服务器的各个存档的时间顺序：[时间轴](https://maxcraft.iruanp.com/posts/history/timeline/)
 
 ## 关于
 
