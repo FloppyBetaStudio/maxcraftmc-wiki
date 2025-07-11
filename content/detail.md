@@ -15,9 +15,13 @@ QQ群：953762913
 
 {{< button url="https://maxcraft.iruanp.com/posts/address/" text="服务器地址" >}}
 
- {{< button url="https://qm.qq.com/q/b96Wv9PlMQ" text="加入QQ群" >}}
+{{< button url="https://qm.qq.com/q/b96Wv9PlMQ" text="加入QQ群" >}}
 
 {{< button url="https://maxcraft.iruanp.com/posts/guide/" text="新玩家指南" >}}
+
+{{< button url="https://mpc.iruanp.com" text="MaxCraft个人中心">}}
+
+加入部分子服务器可能需要在MaxCraft个人中心中提交白名单申请。
 
 在服务器中的玩家都必须遵守：[MaxCraftMC服务器大宪章](https://maxcraft.iruanp.com/posts/charter/)中的规定
 
@@ -30,7 +34,6 @@ QQ群：953762913
 这是MaxCraft的原版生存服务器的代号。Redstone仅代表服务器基本能够保证原版生存特性正常工作，但任何玩家都受到这里的欢迎。
 
 {{< button url="https://maxcraft.iruanp.com/redstone/features/" text="特色" >}}
-{{< button url="https://forms.office.com/r/J97QEH60X9" text="申请白名单" >}}
 {{< button url="https://maxcraft.iruanp.com/redstone/gamerules/" text="特殊规则" >}}
 {{< button url="https://maxcraft-map.iruanp.com/" text="网页地图" >}}
 
