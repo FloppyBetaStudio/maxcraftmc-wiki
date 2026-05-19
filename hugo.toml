@@ -1,7 +1,6 @@
 baseURL = 'https://maxcraft.iruanp.com/'
-languageCode = 'zh-cn'
+locale = 'zh-cn'
 title = 'MaxCraftMC 我的世界服务器'
-theme = 'tailbliss'
 
 DefaultContentLanguage = 'zh-cn'
 enableEmoji = true
@@ -12,7 +11,7 @@ darkmode_js = ['assets/js/darkmode.js']
 enableInlineShortcodes = true
 
 [pagination]
-paperSize = 9
+pagerSize = 9
 
 themesDir = "themes"
 contentDir = "content"
@@ -21,7 +20,9 @@ ignoreFiles = ["themes/tailbliss/content/*"]
 [params]
 author = "MaxCraftMC"
 moto = "开放、自由、包容"
-description = "MaxCraftMC我的世界原版服务器"
+description = "MaxCraftMC 是一个开放、自由、包容的 Minecraft 原版生存服务器，支持 Java 版和基岩版玩家加入。"
+keywords = ["MaxCraftMC", "Minecraft服务器", "我的世界服务器", "原版生存", "Java版服务器", "基岩版服务器"]
+og_image = "/images/site-logo.svg"
 disable_theme_toggle = false
 disable_stay_uptodate = true
 
@@ -79,25 +80,43 @@ weight = 1
 
 [[menu.main]]
 name = "新玩家指南"
-url = "/posts/guide"
+url = "/posts/guide/"
 weight = 2
 
 [[menu.main]]
 name = "服务器规则"
-url = "/posts/charter"
+url = "/posts/charter/"
 weight = 3
 
 [[menu.main]]
 name = "历史"
-url = "/posts/history/timeline"
+url = "/posts/history/timeline/"
 weight = 4
 
 [[menu.main]]
 name = "地址"
-url = "/posts/address"
+url = "/posts/address/"
 weight = 5
 
 [[menu.footer]]
+name = "新玩家指南"
+url = "/posts/guide/"
+weight = 1
+
+[[menu.footer]]
+name = "服务器规则"
+url = "/posts/charter/"
+weight = 2
+
+[[menu.footer]]
+name = "服务器地址"
+url = "/posts/address/"
+weight = 3
+
+[[menu.footer]]
+name = "历史时间轴"
+url = "/posts/history/timeline/"
+weight = 4
 
 
 
@@ -135,3 +154,8 @@ privacyEnhanced = true
 for = "/**"
 [server.headers.values]
 Referrer-Policy = "strict-origin-when-cross-origin"
+
+[module]
+[[module.imports]]
+path = "tailbliss"
+ignoreConfig = true

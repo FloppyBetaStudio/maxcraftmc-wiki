@@ -1,6 +1,10 @@
 ---
 title: "MaxCraftMC"
 slug: "/detail"
+description: "了解 MaxCraftMC 我的世界服务器特色、加入方式、QQ群、网页地图与相关资料入口。"
+summary: "MaxCraftMC 服务器介绍与加入入口。"
+categories: ["服务器资料"]
+tags: ["MaxCraftMC", "Minecraft服务器", "加入服务器"]
 ---
 
 这里是MaxCraftMC服务器的主页。MaxCraftMC是一个开放、自由、包容的Minecraft服务器。

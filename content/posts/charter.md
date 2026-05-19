@@ -1,6 +1,10 @@
 ---
 title: "MaxCraftMC服务器大宪章"
 date: 2024-01-01
+description: "MaxCraftMC 服务器基础规则与社区治理说明，包含言论、财产保护、作弊、管理与特殊条例。"
+summary: "MaxCraftMC 的基础服务器规则、社区治理和违规处理说明。"
+categories: ["服务器资料"]
+tags: ["服务器规则", "大宪章", "社区治理"]
 ---
 
 ## 服务器概况

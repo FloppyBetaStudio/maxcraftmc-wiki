@@ -1,6 +1,10 @@
 ---
 title: "MaxCraft 服务器历史时间轴"
 date: 2024-01-01
+description: "MaxCraftMC 从一周目到 MaxCraft Gen2 的服务器历史时间轴。"
+summary: "按时间线查看 MaxCraftMC 各个周目的开始与结束时间。"
+categories: ["服务器历史"]
+tags: ["服务器历史", "时间轴", "MaxCraft Gen2"]
 ---
 
 **一周目[正式周目]** 

@@ -1,9 +1,11 @@
 ---
 title: "MaxCraftMC原版生存服务器特色"
 date: 2024-01-01
+description: "MaxCraftMC 原版生存服务器的商店、持久存档、Carpet、经济、白名单、日志回滚和备份等特色。"
+summary: "MaxCraftMC 原版生存服务器的核心特色与长期游玩优势。"
+categories: ["MaxCraft: Redstone"]
+tags: ["原版生存", "服务器特色", "Redstone"]
 ---
-
-# MaxCraftMC原版生存服务器特色
 
 MaxCraftMC服务器提供独特且长久的原版生存体验，核心特色包括：
 

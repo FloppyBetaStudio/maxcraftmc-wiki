@@ -1,6 +1,10 @@
 ---
 title: "MaxCraftMC原版生存服务器游戏规则"
 date: 2024-01-01
+description: "MaxCraftMC 原版生存服务器的特殊规则与玩法改动，包括铁砧、矿车、潜影盒、盔甲架、经验修补与睡觉机制。"
+summary: "Redstone 原版生存服务器的特殊玩法规则与操作说明。"
+categories: ["MaxCraft: Redstone"]
+tags: ["游戏规则", "玩法改动", "Redstone"]
 ---
 
 ## 服务器特色规则
