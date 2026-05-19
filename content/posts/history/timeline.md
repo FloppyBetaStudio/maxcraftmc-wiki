@@ -68,7 +68,7 @@ tags: ["服务器历史", "时间轴", "MaxCraft Gen2"]
 
 **MaxCraft Gen2[正式周目]**
 
-[查看详情](/posts/history/MaxCraft_Gen2)
+[查看详情](/posts/history/maxcraft_gen2/)
 
 开始：2024/6/20
 
