@@ -28,7 +28,7 @@
 
                     <img srcset="
                         {{- with $thumb.RelPermalink -}}{{.}} 400w{{- end -}}
-                        {{- with $large.RelPermalink -}}, {{.}} 576w{{- end -}}" src="{{ $hero.RelPermalink }}" width="100%" height="" alt="TailBliss Hero" class="w-full max-w-xl mx-auto rounded-lg" />
+                        {{- with $large.RelPermalink -}}, {{.}} 576w{{- end -}}" src="{{ $hero.RelPermalink }}" width="100%" height="" alt="{{ .Site.Title }} 服务器展示图" class="w-full max-w-xl mx-auto rounded-lg" />
                 </div>
             </div>
         </div>
@@ -55,7 +55,7 @@
                         {{ $p1image := resources.Get .Site.Params.P1.Image }}
                         {{ with $p1image }}
                         {{ with .Resize (printf "%dx%d webp q90" .Width .Height) }}
-                        <img imgh src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" class="w-full h-auto" alt="P1" loading="lazy" />
+                        <img imgh src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" class="w-full h-auto" alt="{{ $.Site.Params.P1.Heading }}" loading="lazy" />
                         {{ end }}
                         {{ end }}
                     </div>
@@ -115,7 +115,7 @@
                     {{ $p2image := resources.Get .Site.Params.P2.Image }}
                     {{ with $p2image }}
                     {{ with .Resize (printf "%dx%d webp q90" .Width .Height) }}
-                    <img imgh src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="p2" class="w-full rounded-lg shadow-xl lg:h-full lg:w-auto lg:max-w-none" loading="lazy" />
+                    <img imgh src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $.Site.Params.P2.Heading }}" class="w-full rounded-lg shadow-xl lg:h-full lg:w-auto lg:max-w-none" loading="lazy" />
                     {{ end }}
                     {{ end }}
 

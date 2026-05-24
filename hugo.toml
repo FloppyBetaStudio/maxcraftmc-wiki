@@ -9,22 +9,35 @@ enableRobotsTXT = true
 canonifyURLs = false
 darkmode_js = ['assets/js/darkmode.js']
 enableInlineShortcodes = true
+timeZone = 'Asia/Shanghai'
 
 [pagination]
 pagerSize = 9
 
+[sitemap]
+changefreq = "weekly"
+filename = "sitemap.xml"
+priority = 0.7
+
+[frontmatter]
+lastmod = ["lastmod", ":git", "date", "publishDate"]
+
 themesDir = "themes"
 contentDir = "content"
-ignoreFiles = ["themes/tailbliss/content/*"]
 
 [params]
 author = "MaxCraftMC"
 moto = "开放、自由、包容"
 description = "MaxCraftMC 是一个开放、自由、包容的 Minecraft 原版生存服务器，支持 Java 版和基岩版玩家加入。"
-keywords = ["MaxCraftMC", "Minecraft服务器", "我的世界服务器", "原版生存", "Java版服务器", "基岩版服务器"]
-og_image = "/images/site-logo.svg"
+keywords = ["MaxCraftMC", "Minecraft服务器", "我的世界服务器", "原版生存服务器", "Java版服务器", "基岩版服务器", "公益服务器", "生存服", "红石服务器"]
+og_image = "images/picture1.jpg"
 disable_theme_toggle = false
 disable_stay_uptodate = true
+
+[params.organization]
+name = "MaxCraftMC"
+url = "https://maxcraft.iruanp.com/"
+logo = "/images/site-logo.svg"
 
 [params.p1]
 heading = "服务器特点"
@@ -159,3 +172,23 @@ Referrer-Policy = "strict-origin-when-cross-origin"
 [[module.imports]]
 path = "tailbliss"
 ignoreConfig = true
+
+[[module.imports.mounts]]
+source = "archetypes"
+target = "archetypes"
+
+[[module.imports.mounts]]
+source = "assets"
+target = "assets"
+
+[[module.imports.mounts]]
+source = "i18n"
+target = "i18n"
+
+[[module.imports.mounts]]
+source = "layouts"
+target = "layouts"
+
+[[module.imports.mounts]]
+source = "static"
+target = "static"

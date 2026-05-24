@@ -5,6 +5,7 @@ description: "MaxCraftMC Java 版与基岩版服务器连接地址、QQ群和入
 summary: "MaxCraftMC Java 版、基岩版连接地址与QQ群入口。"
 categories: ["服务器资料"]
 tags: ["服务器地址", "Java版", "基岩版"]
+keywords: ["MaxCraftMC服务器地址", "mcje.iruanp.com", "mcbe.iruanp.com", "Minecraft Java服务器地址", "Minecraft基岩版服务器地址", "MaxCraftQQ群"]
 ---
 QQ群：953762913 （[加群链接](https://qm.qq.com/q/b96Wv9PlMQ)）
 
