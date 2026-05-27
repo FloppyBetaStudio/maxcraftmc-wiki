@@ -117,6 +117,16 @@ git push
 
 <https://maxcraft.iruanp.com/>
 
+## 搜索引擎收录检查
+
+网站会自动生成 `robots.txt` 和 `sitemap.xml`，地址分别是：
+
+<https://maxcraft.iruanp.com/robots.txt>
+
+<https://maxcraft.iruanp.com/sitemap.xml>
+
+如果重要页面长期没有被搜索引擎收录，可以把 `sitemap.xml` 提交到百度搜索资源平台、360 搜索站长平台和搜狗站长平台。提交时只需要使用上面的 sitemap 地址。
+
 ## 如果遇到问题
 
 如果 `git pull` 或 `git push` 报错，不要连续乱试。把 PowerShell 里的错误信息复制出来，发给仓库管理员或服主。

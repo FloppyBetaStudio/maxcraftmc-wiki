@@ -1,5 +1,27 @@
 const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+function revealOnScroll() {
+  const items = document.querySelectorAll(".mc-hero__copy, .mc-launcher, .mc-section__wrap, .mc-page-hero__inner, .mc-page-content, .mc-footer__inner");
+  if (motionQuery.matches) {
+    items.forEach((item) => item.classList.add("mc-reveal--visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("mc-reveal--visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.14 });
+
+  items.forEach((item) => {
+    item.classList.add("mc-reveal");
+    observer.observe(item);
+  });
+}
+
 function createParticleField() {
   const field = document.querySelector("[data-mc-particles]");
   if (!field || motionQuery.matches) return;
@@ -27,5 +49,19 @@ function createClickBlock(event) {
   window.setTimeout(() => block.remove(), 720);
 }
 
+function decorateThemeToggle() {
+  const toggle = document.getElementById("theme-toggle");
+  if (!toggle || motionQuery.matches) return;
+
+  toggle.addEventListener("click", () => {
+    const flash = document.createElement("span");
+    flash.className = "mc-theme-flash";
+    document.body.appendChild(flash);
+    window.setTimeout(() => flash.remove(), 680);
+  });
+}
+
+revealOnScroll();
 createParticleField();
+decorateThemeToggle();
 window.addEventListener("pointerdown", createClickBlock, { passive: true });

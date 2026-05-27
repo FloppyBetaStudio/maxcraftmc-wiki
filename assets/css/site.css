@@ -94,6 +94,7 @@
   min-height: 2.35rem;
   padding: 0.45rem 0.75rem;
   text-decoration: none;
+  transition: background-color 160ms ease, box-shadow 160ms ease, transform 120ms ease;
 }
 
 .mc-nav__links a:hover,
@@ -101,6 +102,13 @@
 .mc-nav__theme:hover,
 .mc-nav__theme:focus {
   background: #3f7e2b;
+}
+
+.mc-nav__links a:active,
+.mc-nav__theme:active,
+.mc-nav__toggle:active {
+  box-shadow: inset 0 3px rgb(0 0 0 / 0.3);
+  transform: translateY(2px);
 }
 
 .mc-nav__theme {
@@ -112,6 +120,17 @@
     linear-gradient(180deg, rgb(135 206 235 / 0.32), rgb(247 244 232 / 0.88) 34rem),
     repeating-linear-gradient(45deg, rgb(0 0 0 / 0.025) 0 10px, transparent 10px 20px);
   color: var(--mc-ink);
+}
+
+html,
+body,
+.mc-site,
+.mc-page,
+.mc-nav,
+.mc-footer,
+.mc-page-content,
+.mc-route-list a {
+  transition: background-color 260ms ease, color 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
 }
 
 .dark .mc-site {
@@ -185,6 +204,17 @@
   z-index: 9999;
 }
 
+.mc-theme-flash {
+  animation: mc-theme-flash 680ms ease-out forwards;
+  background:
+    linear-gradient(90deg, transparent, rgb(255 255 255 / 0.55), transparent),
+    repeating-linear-gradient(45deg, rgb(85 214 210 / 0.28) 0 12px, rgb(245 197 66 / 0.25) 12px 24px);
+  inset: 0;
+  pointer-events: none;
+  position: fixed;
+  z-index: 9998;
+}
+
 .mc-kicker {
   color: var(--mc-grass-dark);
   font-size: 0.9rem;
@@ -248,12 +278,18 @@
   padding: 0.8rem 1rem;
   text-align: center;
   text-decoration: none;
+  transition: filter 160ms ease, transform 120ms ease, box-shadow 120ms ease;
 }
 
 .mc-button:hover,
 .mc-button:focus {
   filter: brightness(1.08);
   transform: translateY(-1px);
+}
+
+.mc-button:active {
+  box-shadow: inset 0 4px rgb(0 0 0 / 0.22), inset 0 -2px rgb(255 255 255 / 0.18), 0 1px 0 rgb(0 0 0 / 0.35);
+  transform: translateY(3px);
 }
 
 .mc-button-primary {
@@ -451,6 +487,18 @@
   margin-top: 0.5rem;
 }
 
+.mc-section-lead {
+  color: #374151;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-top: 0.85rem;
+  max-width: 48rem;
+}
+
+.dark .mc-section-lead {
+  color: #d1d5db;
+}
+
 .dark .mc-section-title {
   color: #f9fafb;
 }
@@ -483,11 +531,18 @@
   min-height: 10.5rem;
   padding: 1.1rem;
   text-decoration: none;
+  transition: box-shadow 180ms ease, transform 160ms ease, filter 160ms ease;
 }
 
 .mc-link-card:hover,
 .mc-link-card:focus {
+  filter: brightness(1.03);
   transform: translateY(-2px);
+}
+
+.mc-link-card:active {
+  box-shadow: inset 0 4px rgb(0 0 0 / 0.16), 0 1px 0 rgb(0 0 0 / 0.24);
+  transform: translateY(4px);
 }
 
 .mc-link-card span {
@@ -544,6 +599,10 @@
   margin-top: 1.5rem;
 }
 
+.mc-route-list--all {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}
+
 .mc-route-list a {
   align-items: center;
   background: #ffffff;
@@ -554,11 +613,17 @@
   gap: 0.2rem;
   padding: 1rem;
   text-decoration: none;
+  transition: background-color 180ms ease, box-shadow 140ms ease, transform 140ms ease;
 }
 
 .mc-route-list a:hover,
 .mc-route-list a:focus {
   background: #eef8e9;
+}
+
+.mc-route-list a:active {
+  box-shadow: inset 0 3px rgb(0 0 0 / 0.18);
+  transform: translateY(3px);
 }
 
 .dark .mc-route-list a {
@@ -741,11 +806,28 @@
   font-weight: 850;
   padding: 0.5rem 0.75rem;
   text-decoration: none;
+  transition: background-color 160ms ease, box-shadow 120ms ease, transform 120ms ease;
 }
 
 .mc-footer a:hover,
 .mc-footer a:focus {
   background: #3f7e2b;
+}
+
+.mc-footer a:active {
+  box-shadow: inset 0 3px rgb(0 0 0 / 0.32);
+  transform: translateY(2px);
+}
+
+.mc-reveal {
+  opacity: 0;
+  transform: translateY(32px) scale(0.98);
+  transition: opacity 620ms ease, transform 620ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.mc-reveal--visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .mc-footer__small {
@@ -817,6 +899,20 @@
   }
 }
 
+@keyframes mc-theme-flash {
+  0% {
+    opacity: 0;
+    transform: translateX(-12%);
+  }
+  32% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(12%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .mc-particle,
   .mc-click-block {
@@ -829,5 +925,12 @@
   .mc-link-card:hover,
   .mc-link-card:focus {
     transform: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
   }
 }

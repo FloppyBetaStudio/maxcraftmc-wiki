@@ -129,29 +129,18 @@
 
     <section class="mc-section">
         <div class="mc-section__wrap mc-section__wrap--single">
-            <p class="mc-kicker">Useful links</p>
-            <h2 class="mc-section-title">常用入口顺序</h2>
-            <div class="mc-route-list">
-                <a href="/posts/address/">
-                    <span>服务器地址</span>
-                    <small>Java 版、基岩版地址、端口、QQ群入口</small>
+            <p class="mc-kicker">All public pages</p>
+            <h2 class="mc-section-title">全站资料入口</h2>
+            <p class="mc-section-lead">这里列出官网所有正式资料页，避免任何内容变成难以发现的孤儿页面。</p>
+            <div class="mc-route-list mc-route-list--all">
+                {{ range .Site.RegularPages.ByTitle }}
+                {{ if not .Params.noindex }}
+                <a href="{{ .RelPermalink }}">
+                    <span>{{ .Title }}</span>
+                    <small>{{ .Params.summary | default .Description | default .Summary | plainify | truncate 72 }}</small>
                 </a>
-                <a href="/posts/guide/">
-                    <span>新玩家指南</span>
-                    <small>账号、传送、地图、经济系统说明</small>
-                </a>
-                <a href="/posts/charter/">
-                    <span>服务器大宪章</span>
-                    <small>入服前需要遵守的社区规则</small>
-                </a>
-                <a href="{{ .Site.Params.server.player_center }}">
-                    <span>MaxCraft 个人中心</span>
-                    <small>账号查询与白名单申请</small>
-                </a>
-                <a href="/posts/history/timeline/">
-                    <span>服务器历史</span>
-                    <small>各个存档和重要节点</small>
-                </a>
+                {{ end }}
+                {{ end }}
             </div>
         </div>
     </section>

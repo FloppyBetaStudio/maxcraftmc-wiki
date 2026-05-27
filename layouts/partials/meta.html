@@ -43,8 +43,13 @@
 <title>{{ $pageTitle }}</title>
 <meta name="description" content="{{ $description }}" />
 <meta name="robots" content="{{ if .Params.noindex }}noindex,nofollow{{ else }}index,follow{{ end }}" />
+<meta name="Baiduspider" content="{{ if .Params.noindex }}noindex,nofollow{{ else }}index,follow{{ end }}" />
+<meta name="Sogou web spider" content="{{ if .Params.noindex }}noindex,nofollow{{ else }}index,follow{{ end }}" />
+<meta name="360Spider" content="{{ if .Params.noindex }}noindex,nofollow{{ else }}index,follow{{ end }}" />
 <meta name="author" content="{{ .Params.author | default .Site.Params.author | default $siteTitle }}" />
 <meta name="format-detection" content="telephone=no" />
+<meta name="location" content="{{ .Site.Params.mainland_region | default "China" }}" />
+<meta http-equiv="content-language" content="{{ .Site.Params.mainland_language | default "zh-Hans" }}" />
 <link rel="canonical" href="{{ $canonical }}" />
 {{ if gt (len $keywords) 0 }}
 <meta name="keywords" content="{{ delimit $keywords ", " }}" />

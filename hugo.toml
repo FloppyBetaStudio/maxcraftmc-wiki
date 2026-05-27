@@ -33,6 +33,11 @@ keywords = ["MaxCraftMC", "MaxCraft", "Minecraft服务器", "我的世界服务�
 og_image = "images/picture1.jpg"
 disable_theme_toggle = false
 disable_stay_uptodate = true
+mainland_region = "China"
+mainland_language = "zh-Hans"
+baidu_verify_code = ""
+so_verify_code = ""
+sogou_verify_code = ""
 
 [params.organization]
 name = "MaxCraftMC"

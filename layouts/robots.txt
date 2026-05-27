@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
 
+User-agent: Baiduspider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
 Sitemap: {{ "sitemap.xml" | absURL }}
