@@ -1,0 +1,21 @@
+<footer class="mc-footer">
+    <div class="mc-footer__inner">
+        <div>
+            <strong>{{ .Site.Title }}</strong>
+            <p>{{ .Site.Params.description }}</p>
+        </div>
+        <nav aria-label="Footer">
+            {{ range site.Menus.footer }}
+            <a href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+            {{ end }}
+        </nav>
+        <p class="mc-footer__small">&copy; {{ now.Format "2006" }} {{ .Site.Title }} · MaxCraftMC</p>
+    </div>
+</footer>
+
+{{ if not .Site.Params.Disable_theme_toggle }}
+{{ $js := resources.Get "js/darkmode.js" | js.Build }}
+<script defer src="{{ $js.RelPermalink }}"></script>
+{{ end }}
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js" crossorigin="anonymous" rel=preconnect></script>

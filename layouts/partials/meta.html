@@ -74,12 +74,35 @@
 {{- $orgURL := .Site.Params.organization.url | default .Site.BaseURL -}}
 {{- $orgLogo := .Site.Params.organization.logo | default "/images/site-logo.svg" | absURL -}}
 {{- $publisher := dict "@type" "Organization" "name" $orgName "url" $orgURL "logo" (dict "@type" "ImageObject" "url" $orgLogo) -}}
-{{- $schemaType := cond .IsHome "WebSite" (cond .IsSection "CollectionPage" "Article") -}}
-{{- $schema := dict "@context" "https://schema.org" "@type" $schemaType "name" (cond .IsHome $siteTitle .Title) "headline" .Title "description" $description "url" $canonical "inLanguage" $siteLocale "image" $imageURL "publisher" $publisher -}}
+{{- $webPage := dict "@type" "WebPage" "@id" $canonical "url" $canonical "name" $pageTitle "description" $description "inLanguage" $siteLocale "isPartOf" (dict "@id" (printf "%s#website" .Site.BaseURL)) "publisher" $publisher -}}
 {{- if and .IsPage $hasDate -}}
+{{- $webPage = merge $webPage (dict "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00") "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")) -}}
+{{- end -}}
+{{- $website := dict "@type" "WebSite" "@id" (printf "%s#website" .Site.BaseURL) "url" .Site.BaseURL "name" $siteTitle "description" .Site.Params.description "inLanguage" $siteLocale "publisher" $publisher -}}
+{{- $breadcrumbs := slice (dict "@type" "ListItem" "position" 1 "name" "首页" "item" .Site.BaseURL) -}}
+{{- if not .IsHome -}}
+{{- with .CurrentSection -}}
+{{- if and .Title (ne .RelPermalink "/") -}}
+{{- $breadcrumbs = $breadcrumbs | append (dict "@type" "ListItem" "position" 2 "name" .Title "item" .Permalink) -}}
+{{- end -}}
+{{- end -}}
+{{- $breadcrumbs = $breadcrumbs | append (dict "@type" "ListItem" "position" (add (len $breadcrumbs) 1) "name" .Title "item" $canonical) -}}
+{{- end -}}
+{{- $breadcrumbSchema := dict "@type" "BreadcrumbList" "@id" (printf "%s#breadcrumb" $canonical) "itemListElement" $breadcrumbs -}}
+{{- $graph := slice $website $webPage $breadcrumbSchema -}}
+{{- if .IsHome -}}
+{{- $serverParams := .Site.Params.server -}}
+{{- $gameServer := dict "@type" "GameServer" "@id" (printf "%s#server" .Site.BaseURL) "name" $serverParams.name "url" .Site.BaseURL "description" .Site.Params.description "game" "Minecraft" "image" $imageURL "sameAs" (slice $serverParams.player_center $serverParams.qq_join_url) "contactPoint" (dict "@type" "ContactPoint" "email" $serverParams.contact_email "contactType" "server owner") "serverStatus" "Online" -}}
+{{- $graph = $graph | append $gameServer -}}
+{{- else if .IsPage -}}
 {{- $author := dict "@type" "Organization" "name" (.Params.author | default .Site.Params.author | default $siteTitle) -}}
-{{- $schema = merge $schema (dict "author" $author "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00") "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00") "mainEntityOfPage" (dict "@type" "WebPage" "@id" $canonical)) -}}
-{{- end }}
+{{- $article := dict "@type" "Article" "@id" (printf "%s#article" $canonical) "headline" .Title "name" .Title "description" $description "url" $canonical "inLanguage" $siteLocale "image" $imageURL "author" $author "publisher" $publisher "mainEntityOfPage" (dict "@id" $canonical) -}}
+{{- if $hasDate -}}
+{{- $article = merge $article (dict "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00") "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")) -}}
+{{- end -}}
+{{- $graph = $graph | append $article -}}
+{{- end -}}
+{{- $schema := dict "@context" "https://schema.org" "@graph" $graph -}}
 <script type="application/ld+json">
 {{ $schema | jsonify | safeJS }}
 </script>

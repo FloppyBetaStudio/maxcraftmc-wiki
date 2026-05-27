@@ -1,6 +1,6 @@
 baseURL = 'https://maxcraft.iruanp.com/'
 locale = 'zh-cn'
-title = 'MaxCraftMC 我的世界服务器'
+title = 'MaxCraftMC 原版生存服务器'
 
 DefaultContentLanguage = 'zh-cn'
 enableEmoji = true
@@ -28,8 +28,8 @@ contentDir = "content"
 [params]
 author = "MaxCraftMC"
 moto = "开放、自由、包容"
-description = "MaxCraftMC 是一个开放、自由、包容的 Minecraft 原版生存服务器，支持 Java 版和基岩版玩家加入。"
-keywords = ["MaxCraftMC", "Minecraft服务器", "我的世界服务器", "原版生存服务器", "Java版服务器", "基岩版服务器", "公益服务器", "生存服", "红石服务器"]
+description = "MaxCraftMC 是长期开放的 Minecraft 原版生存服务器，支持 Java 版和基岩版玩家加入，永不删档，永久存档。"
+keywords = ["MaxCraftMC", "MaxCraft", "Minecraft服务器", "我的世界服务器", "我的世界原版服务器", "原版生存服务器", "Java版服务器", "基岩版服务器", "公益服务器", "生存服", "红石服务器", "永不删档服务器", "永久存档服务器", "Minecraft Java服务器", "Minecraft基岩版服务器"]
 og_image = "images/picture1.jpg"
 disable_theme_toggle = false
 disable_stay_uptodate = true
@@ -39,21 +39,32 @@ name = "MaxCraftMC"
 url = "https://maxcraft.iruanp.com/"
 logo = "/images/site-logo.svg"
 
+[params.server]
+name = "MaxCraftMC"
+java = "mcje.iruanp.com"
+bedrock = "mcbe.iruanp.com"
+bedrock_port = "25565"
+alternate = "mc2.iruanp.com:25565"
+qq_group = "953762913"
+qq_join_url = "https://qm.qq.com/q/b96Wv9PlMQ"
+player_center = "https://mpc.iruanp.com/"
+contact_email = "floppy@iruanp.com"
+
 [params.p1]
 heading = "服务器特点"
 content = [
-    { text = "MaxCraftMC是一个开放、自由、包容的Minecraft服务器，我们始终秉持着这三个核心价值观。在这里，每位玩家都能享受到纯粹的游戏乐趣。" },
-    { text = "同时，MaxCraftMC也是一个带有一点养老色彩的服务器，我们不会更换存档，所以建筑玩家和养老玩家可以放心入驻。" },
-    { text = "并且内置一些小游戏，可以和群友们在原版生存之余一起游玩。" }
+    { text = "MaxCraftMC 是一个开放、自由、包容的 Minecraft 原版生存服务器，欢迎 Java 版和基岩版玩家加入。" },
+    { text = "服务器永不删档，永久存档，建筑玩家、养老玩家和红石玩家都可以放心长期建设。" },
+    { text = "加入服务器和 QQ 群前，请先阅读服务器大宪章；账号查询和特定子服务器白名单申请请使用 MaxCraft 个人中心。" }
 ]
 image = "images/picture1.jpg"
 
 [params.p1.button]
-text = "了解更多"
-url = "/detail"
+text = "查看服务器地址"
+url = "/posts/address/"
 
 [params.p2]
-heading = "服务器特色与玩法"
+heading = "原版生存与长期社区"
 content = [
     { text = "我们的服务器采用原版生存玩法，注重玩家间的互动与合作。服务器内设有完善的领地系统，让玩家可以保护自己的建筑和资源，安心发展。" },
     { text = "在这里，你可以欣赏到众多令人惊叹的建筑群，从中世纪城堡到现代都市，从东方庭院到西方教堂，每一处都凝聚着玩家们的创意与心血。" },
@@ -65,10 +76,12 @@ image = "images/picture2.jpg"
 [params.p3]
 heading = "加入我们"
 content = [
-    { text = "无论你是建筑达人、红石专家，还是刚接触Minecraft的新手，都能在MaxCraftMC找到属于自己的位置。我们的社区氛围友好，随时欢迎新的玩家加入这个大家庭。" }
+    { text = "无论你是建筑达人、红石专家，还是刚接触 Minecraft 的新手，都能在 MaxCraftMC 找到属于自己的位置。" }
 ]
 links = [
-    { text = "加入服务器", url = "https://maxcraft.iruanp.com/posts/address/" }
+    { text = "服务器地址", url = "https://maxcraft.iruanp.com/posts/address/" },
+    { text = "新玩家指南", url = "https://maxcraft.iruanp.com/posts/guide/" },
+    { text = "MaxCraft 个人中心", url = "https://mpc.iruanp.com/" }
 ]
 image = "images/picture1.jpg"
 logos = []
@@ -92,44 +105,59 @@ url = "/"
 weight = 1
 
 [[menu.main]]
+name = "服务器地址"
+url = "/posts/address/"
+weight = 2
+
+[[menu.main]]
 name = "新玩家指南"
 url = "/posts/guide/"
-weight = 2
+weight = 3
 
 [[menu.main]]
 name = "服务器规则"
 url = "/posts/charter/"
-weight = 3
+weight = 4
+
+[[menu.main]]
+name = "个人中心"
+url = "https://mpc.iruanp.com/"
+weight = 5
+
+[[menu.main]]
+name = "网页地图"
+url = "https://maxcraft-map.iruanp.com/"
+weight = 6
 
 [[menu.main]]
 name = "历史"
 url = "/posts/history/timeline/"
-weight = 4
-
-[[menu.main]]
-name = "地址"
-url = "/posts/address/"
-weight = 5
-
-[[menu.footer]]
-name = "新玩家指南"
-url = "/posts/guide/"
-weight = 1
-
-[[menu.footer]]
-name = "服务器规则"
-url = "/posts/charter/"
-weight = 2
+weight = 7
 
 [[menu.footer]]
 name = "服务器地址"
 url = "/posts/address/"
+weight = 1
+
+[[menu.footer]]
+name = "新玩家指南"
+url = "/posts/guide/"
+weight = 2
+
+[[menu.footer]]
+name = "服务器规则"
+url = "/posts/charter/"
 weight = 3
+
+[[menu.footer]]
+name = "MaxCraft 个人中心"
+url = "https://mpc.iruanp.com/"
+weight = 4
 
 [[menu.footer]]
 name = "历史时间轴"
 url = "/posts/history/timeline/"
-weight = 4
+weight = 5
 
 
 

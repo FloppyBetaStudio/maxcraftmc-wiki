@@ -25,3 +25,11 @@
 {{ else }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
 {{ end }}
+{{ with resources.Get "css/site.css" }}
+{{ if hugo.IsProduction }}
+{{ $siteStyles := . | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $siteStyles.RelPermalink }}" integrity="{{ $siteStyles.Data.Integrity }}" />
+{{ else }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" />
+{{ end }}
+{{ end }}

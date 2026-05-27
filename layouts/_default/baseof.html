@@ -9,6 +9,15 @@
     {{ partial "nav.html" . }}
     {{ block "main" . }}{{ end }}
     {{ partial "footer" . }}
+    {{ with resources.Get "js/site.js" }}
+    {{ if hugo.IsProduction }}
+    {{ $siteJS := . | js.Build | minify | fingerprint }}
+    <script defer src="{{ $siteJS.RelPermalink }}" integrity="{{ $siteJS.Data.Integrity }}"></script>
+    {{ else }}
+    {{ $siteJS := . | js.Build }}
+    <script defer src="{{ $siteJS.RelPermalink }}"></script>
+    {{ end }}
+    {{ end }}
 </body>
 
 </html>

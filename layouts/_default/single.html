@@ -1,33 +1,32 @@
 {{ define "main" }}
-<article>
-  <header class="mb-4 bg-primary-600">
-    <h1 class="px-6 py-16 text-4xl font-black text-center text-white capitalize md:text-5xl">
-      {{ .Title }}
-    </h1>
+<article class="mc-page">
+  <header class="mc-page-hero">
+    <div class="mc-page-hero__inner">
+      <p class="mc-kicker">{{ .Section | default .Site.Title }}</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}
+      <p>{{ . }}</p>
+      {{ else with .Params.summary }}
+      <p>{{ . }}</p>
+      {{ end }}
+    </div>
   </header>
 
   {{ with .Params.featured_image }}
-  <div class="mx-auto mt-8 mb-2 max-w-5xl">
-    <div class="px-6">
-      {{ with resources.Get . }}
-      {{ $small := (.Resize "400x webp q80").RelPermalink }}
-      {{ $medium := (.Resize "550x webp q80").RelPermalink }}
-      {{ $large := (.Resize "900x webp q80").RelPermalink }}
-      {{ $featuredimage := (.Resize "1500x webp q80").RelPermalink }}
-      <img src="{{ $featuredimage }}" srcset="
-        {{- with $small -}}, {{ . }} 400w{{- end -}}
-        {{- with $medium -}}, {{ . }} 550w{{- end -}}
-        {{- with $large -}}, {{ . }} 768w{{- end -}}
-        {{- with $featuredimage -}}, {{ . }} 1100w{{- end -}}"
-           class="object-fill overflow-hidden rounded-lg ring-4 shadow-lg ring-zinc-300/40 dark:ring-gray-900/40 shadow-neutral-100/20 dark:shadow-neutral-800/40"
-           width="100%" alt="{{ $.Title }}" />
-      {{ end }}
-    </div>
+  <div class="mc-page-media">
+    {{ with resources.Get . }}
+    {{ $small := (.Resize "400x webp q80").RelPermalink }}
+    {{ $medium := (.Resize "700x webp q80").RelPermalink }}
+    {{ $featuredimage := (.Resize "1200x webp q80").RelPermalink }}
+    <img src="{{ $featuredimage }}" srcset="{{ $small }} 400w, {{ $medium }} 700w, {{ $featuredimage }} 1200w" sizes="(min-width: 900px) 860px, 92vw" width="1200" alt="{{ $.Title }}" />
+    {{ end }}
   </div>
   {{ end }}
 
-  <div class="px-6 pt-6 pb-16 mx-auto prose prose-h1:text-2xl dark:prose-invert">
-    {{ .Content }}
+  <div class="mc-page-shell">
+    <div class="mc-page-content prose prose-h1:text-2xl dark:prose-invert">
+      {{ .Content }}
+    </div>
   </div>
 </article>
 {{ end }}
