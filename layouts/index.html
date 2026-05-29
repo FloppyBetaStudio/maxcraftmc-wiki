@@ -1,9 +1,18 @@
 {{ define "main" }}
-<main class="mc-site">
-    <section class="mc-hero">
+<main class="mc-site" data-mc-scroll-world>
+    <div class="mc-world-path" aria-hidden="true">
+        <div class="mc-world-path__track"></div>
+        <div class="mc-world-path__fill" data-mc-scroll-fill></div>
+        <span class="mc-world-path__node mc-world-path__node--spawn"></span>
+        <span class="mc-world-path__node mc-world-path__node--rules"></span>
+        <span class="mc-world-path__node mc-world-path__node--world"></span>
+        <span class="mc-world-path__node mc-world-path__node--archive"></span>
+    </div>
+
+    <section class="mc-hero mc-story-block" data-mc-story="spawn">
         <div class="mc-particles" data-mc-particles aria-hidden="true"></div>
         <div class="mc-hero__wrap">
-            <div class="mc-hero__copy">
+            <div class="mc-hero__copy" data-mc-parallax="0.08">
                 <p class="mc-kicker">MaxCraft 原版服务器 · 永不删档 · 永久存档</p>
                 <h1 class="mc-hero-title">{{ .Site.Title }}</h1>
                 <p class="mc-hero-copy">{{ .Site.Params.Description }}</p>
@@ -14,7 +23,7 @@
                 </div>
             </div>
 
-            <div class="mc-launcher" aria-labelledby="server-list-title">
+            <div class="mc-launcher" aria-labelledby="server-list-title" data-mc-parallax="-0.05">
                 <div class="mc-window-bar">
                     <span></span><span></span><span></span>
                     <strong>Multiplayer</strong>
@@ -66,7 +75,7 @@
         </div>
     </section>
 
-    <section class="mc-section mc-section--stone">
+    <section class="mc-section mc-section--stone mc-story-block" data-mc-story="rules">
         <div class="mc-section__wrap">
             <div>
                 <p class="mc-kicker">Before joining</p>
@@ -102,7 +111,7 @@
         </div>
     </section>
 
-    <section class="mc-section mc-section--world">
+    <section class="mc-section mc-section--world mc-story-block" data-mc-story="world">
         <div class="mc-section__wrap mc-section__wrap--media">
             <div class="mc-gallery">
                 {{ with resources.Get .Site.Params.P1.Image }}
@@ -127,7 +136,7 @@
         </div>
     </section>
 
-    <section class="mc-section">
+    <section class="mc-section mc-story-block" data-mc-story="archive">
         <div class="mc-section__wrap mc-section__wrap--single">
             <p class="mc-kicker">All public pages</p>
             <h2 class="mc-section-title">全站资料入口</h2>
