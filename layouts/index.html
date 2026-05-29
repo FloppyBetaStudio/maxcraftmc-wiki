@@ -140,6 +140,14 @@
         <div class="mc-section__wrap mc-section__wrap--single">
             <p class="mc-kicker">All public pages</p>
             <h2 class="mc-section-title">全站资料入口</h2>
+            <div class="mc-route-list mc-route-list--sections" aria-label="内容分类入口">
+                {{ range where .Site.Sections "Params.noindex" "!=" true }}
+                <a href="{{ .RelPermalink }}">
+                    <span>{{ .Title }}</span>
+                    <small>{{ .Params.summary | default .Description | default .Summary | plainify | truncate 72 }}</small>
+                </a>
+                {{ end }}
+            </div>
             <div class="mc-route-list mc-route-list--all">
                 {{ range .Site.RegularPages.ByTitle }}
                 {{ if not .Params.noindex }}

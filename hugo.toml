@@ -125,19 +125,29 @@ url = "/posts/charter/"
 weight = 4
 
 [[menu.main]]
+name = "公告"
+url = "/announcements/"
+weight = 5
+
+[[menu.main]]
+name = "判例"
+url = "/cases/"
+weight = 6
+
+[[menu.main]]
 name = "个人中心"
 url = "https://mpc.iruanp.com/"
-weight = 5
+weight = 7
 
 [[menu.main]]
 name = "网页地图"
 url = "https://maxcraft-map.iruanp.com/"
-weight = 6
+weight = 8
 
 [[menu.main]]
 name = "历史"
 url = "/posts/history/timeline/"
-weight = 7
+weight = 9
 
 [[menu.footer]]
 name = "服务器地址"
@@ -155,14 +165,24 @@ url = "/posts/charter/"
 weight = 3
 
 [[menu.footer]]
+name = "服务器公告"
+url = "/announcements/"
+weight = 4
+
+[[menu.footer]]
+name = "服务器判例"
+url = "/cases/"
+weight = 5
+
+[[menu.footer]]
 name = "MaxCraft 个人中心"
 url = "https://mpc.iruanp.com/"
-weight = 4
+weight = 6
 
 [[menu.footer]]
 name = "历史时间轴"
 url = "/posts/history/timeline/"
-weight = 5
+weight = 7
 
 
 

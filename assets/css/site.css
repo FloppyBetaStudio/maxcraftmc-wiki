@@ -792,6 +792,19 @@ body,
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
 }
 
+.mc-route-list--sections {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  margin-bottom: 2rem;
+}
+
+.mc-route-list--sections a {
+  border-top: 5px solid var(--mc-gold);
+}
+
+.mc-route-list--articles {
+  margin-top: 2rem;
+}
+
 .mc-route-list a {
   align-items: center;
   background: #ffffff;
@@ -831,6 +844,21 @@ body,
 }
 
 .dark .mc-route-list small {
+  color: #cbd5e1;
+}
+
+.mc-empty-list {
+  background: #ffffff;
+  border: 3px solid var(--mc-border);
+  box-shadow: 0 4px 0 rgb(0 0 0 / 0.16);
+  color: #374151;
+  font-weight: 800;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.dark .mc-empty-list {
+  background: #111827;
   color: #cbd5e1;
 }
 

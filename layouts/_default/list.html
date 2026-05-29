@@ -1,0 +1,47 @@
+{{ define "main" }}
+<main class="mc-page">
+  <header class="mc-page-hero">
+    <div class="mc-page-hero__inner">
+      <p class="mc-kicker">{{ .Section | default .Site.Title }}</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}
+      <p>{{ . }}</p>
+      {{ else with .Params.summary }}
+      <p>{{ . }}</p>
+      {{ end }}
+    </div>
+  </header>
+
+  <div class="mc-page-shell">
+    <div class="mc-page-content prose prose-h1:text-2xl dark:prose-invert">
+      {{ with .Content }}
+      {{ . }}
+      {{ end }}
+
+      {{ $childSections := .Sections }}
+      {{ $pages := .RegularPages }}
+      {{ if or $childSections $pages }}
+      <div class="mc-route-list mc-route-list--articles">
+        {{ range $childSections.ByTitle }}
+        <a href="{{ .RelPermalink }}">
+          <span>{{ .Title }}</span>
+          <small>{{ .Params.summary | default .Description | default .Summary | plainify | truncate 88 }}</small>
+        </a>
+        {{ end }}
+        {{ range $pages.ByDate.Reverse }}
+        <a href="{{ .RelPermalink }}">
+          <span>{{ .Title }}</span>
+          <small>
+            {{ with .Date }}{{ .Format "2006-01-02" }} · {{ end }}
+            {{ .Params.summary | default .Description | default .Summary | plainify | truncate 88 }}
+          </small>
+        </a>
+        {{ end }}
+      </div>
+      {{ else }}
+      <p class="mc-empty-list">这个栏目暂时还没有公开文章。</p>
+      {{ end }}
+    </div>
+  </div>
+</main>
+{{ end }}
