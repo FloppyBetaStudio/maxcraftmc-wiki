@@ -140,7 +140,6 @@
         <div class="mc-section__wrap mc-section__wrap--single">
             <p class="mc-kicker">All public pages</p>
             <h2 class="mc-section-title">全站资料入口</h2>
-            <p class="mc-section-lead">这里列出官网所有正式资料页，避免任何内容变成难以发现的孤儿页面。</p>
             <div class="mc-route-list mc-route-list--all">
                 {{ range .Site.RegularPages.ByTitle }}
                 {{ if not .Params.noindex }}
