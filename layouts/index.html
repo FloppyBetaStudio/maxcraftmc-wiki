@@ -1,15 +1,15 @@
 {{ define "main" }}
 <main class="mc-site" data-mc-scroll-world>
-    <div class="mc-world-path" aria-hidden="true">
+    <nav class="mc-world-path" aria-label="首页区块快速滚动">
         <div class="mc-world-path__track"></div>
         <div class="mc-world-path__fill" data-mc-scroll-fill></div>
-        <span class="mc-world-path__node mc-world-path__node--spawn"></span>
-        <span class="mc-world-path__node mc-world-path__node--rules"></span>
-        <span class="mc-world-path__node mc-world-path__node--world"></span>
-        <span class="mc-world-path__node mc-world-path__node--archive"></span>
-    </div>
+        <button class="mc-world-path__node mc-world-path__node--spawn" type="button" data-mc-scroll-target="spawn" aria-label="滚动到服务器入口"></button>
+        <button class="mc-world-path__node mc-world-path__node--rules" type="button" data-mc-scroll-target="rules" aria-label="滚动到入服须知"></button>
+        <button class="mc-world-path__node mc-world-path__node--world" type="button" data-mc-scroll-target="world" aria-label="滚动到服务器特色"></button>
+        <button class="mc-world-path__node mc-world-path__node--archive" type="button" data-mc-scroll-target="archive" aria-label="滚动到全站资料入口"></button>
+    </nav>
 
-    <section class="mc-hero mc-story-block" data-mc-story="spawn">
+    <section class="mc-hero mc-story-block" id="mc-story-spawn" data-mc-story="spawn">
         <div class="mc-particles" data-mc-particles aria-hidden="true"></div>
         <div class="mc-hero__wrap">
             <div class="mc-hero__copy" data-mc-parallax="0.08">
@@ -75,7 +75,7 @@
         </div>
     </section>
 
-    <section class="mc-section mc-section--stone mc-story-block" data-mc-story="rules">
+    <section class="mc-section mc-section--stone mc-story-block" id="mc-story-rules" data-mc-story="rules">
         <div class="mc-section__wrap">
             <div>
                 <p class="mc-kicker">Before joining</p>
@@ -111,7 +111,7 @@
         </div>
     </section>
 
-    <section class="mc-section mc-section--world mc-story-block" data-mc-story="world">
+    <section class="mc-section mc-section--world mc-story-block" id="mc-story-world" data-mc-story="world">
         <div class="mc-section__wrap mc-section__wrap--media">
             <div class="mc-gallery">
                 {{ with resources.Get .Site.Params.P1.Image }}
@@ -136,7 +136,7 @@
         </div>
     </section>
 
-    <section class="mc-section mc-story-block" data-mc-story="archive">
+    <section class="mc-section mc-story-block" id="mc-story-archive" data-mc-story="archive">
         <div class="mc-section__wrap mc-section__wrap--single">
             <p class="mc-kicker">All public pages</p>
             <h2 class="mc-section-title">全站资料入口</h2>

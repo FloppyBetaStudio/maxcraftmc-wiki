@@ -14,6 +14,11 @@
   --mc-paper: #f7f4e8;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.75rem;
+}
+
 .mc-nav {
   background: #151719;
   border-bottom: 4px solid #050505;
@@ -174,12 +179,18 @@ body,
 }
 
 .mc-world-path__node {
+  appearance: none;
   background: #2d2f33;
   border: 3px solid #050505;
+  border-radius: 0;
   box-shadow: inset 0 2px rgb(255 255 255 / 0.12), 0 0 0 0 rgb(212 60 47 / 0);
+  cursor: pointer;
   height: 1.15rem;
   left: 0.1rem;
+  padding: 0;
+  pointer-events: auto;
   position: absolute;
+  transition: background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
   width: 1.15rem;
 }
 
@@ -205,8 +216,18 @@ body,
   box-shadow: inset 0 2px rgb(255 255 255 / 0.2), 0 0 18px rgb(212 60 47 / 0.72);
 }
 
+.mc-world-path__node:hover,
+.mc-world-path__node:focus-visible {
+  background: #f97316;
+  box-shadow: inset 0 2px rgb(255 255 255 / 0.24), 0 0 22px rgb(249 115 22 / 0.72);
+  outline: 3px solid rgb(255 255 255 / 0.84);
+  outline-offset: 3px;
+  transform: scale(1.18);
+}
+
 .mc-story-block {
   position: relative;
+  scroll-margin-top: 5.75rem;
 }
 
 .mc-story-block::before {
@@ -1017,6 +1038,14 @@ body,
 }
 
 @media (min-width: 920px) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+
+  .mc-story-block {
+    scroll-snap-align: start;
+  }
+
   .mc-nav__toggle {
     display: none;
   }

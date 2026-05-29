@@ -37,8 +37,15 @@ function driveScrollStory() {
     archive: document.querySelector(".mc-world-path__node--archive"),
   };
   const storyBlocks = Array.from(document.querySelectorAll("[data-mc-story]"));
+  const storyByName = storyBlocks.reduce((map, block) => {
+    map[block.dataset.mcStory] = block;
+    return map;
+  }, {});
   const parallaxItems = Array.from(document.querySelectorAll("[data-mc-parallax]"));
   let ticking = false;
+  let scrollSettleTimer = 0;
+  let isProgrammaticScroll = false;
+  let activeStory = "spawn";
 
   function update() {
     const rect = world.getBoundingClientRect();
@@ -46,7 +53,7 @@ function driveScrollStory() {
     const progress = clamp((0 - rect.top) / total, 0, 1);
     world.style.setProperty("--mc-scroll-progress", progress.toFixed(4));
 
-    let activeStory = "spawn";
+    activeStory = "spawn";
     storyBlocks.forEach((block) => {
       const blockRect = block.getBoundingClientRect();
       const midpoint = window.innerHeight * 0.42;
@@ -56,7 +63,14 @@ function driveScrollStory() {
     });
 
     Object.entries(nodes).forEach(([name, node]) => {
-      if (node) node.classList.toggle("is-active", name === activeStory);
+      if (!node) return;
+      const isActive = name === activeStory;
+      node.classList.toggle("is-active", isActive);
+      if (isActive) {
+        node.setAttribute("aria-current", "step");
+      } else {
+        node.removeAttribute("aria-current");
+      }
     });
 
     parallaxItems.forEach((item) => {
@@ -69,12 +83,59 @@ function driveScrollStory() {
     ticking = false;
   }
 
+  function storyScrollTop(block) {
+    const rect = block.getBoundingClientRect();
+    const scrollPadding = 92;
+    return Math.max(0, window.scrollY + rect.top - scrollPadding);
+  }
+
+  function smoothScrollTo(block) {
+    isProgrammaticScroll = true;
+    window.scrollTo({
+      top: storyScrollTop(block),
+      behavior: "smooth",
+    });
+    window.setTimeout(() => {
+      isProgrammaticScroll = false;
+    }, 900);
+  }
+
+  function nearestStoryBlock() {
+    const anchorLine = window.innerHeight * 0.32;
+    return storyBlocks.reduce((nearest, block) => {
+      const rect = block.getBoundingClientRect();
+      const distance = Math.abs(rect.top - anchorLine);
+      if (!nearest || distance < nearest.distance) return { block, distance };
+      return nearest;
+    }, null);
+  }
+
+  function settleNearStory() {
+    if (isProgrammaticScroll || window.innerWidth < 760) return;
+
+    const nearest = nearestStoryBlock();
+    if (!nearest || nearest.distance > window.innerHeight * 0.24) return;
+
+    const targetTop = storyScrollTop(nearest.block);
+    if (Math.abs(window.scrollY - targetTop) < 28) return;
+
+    smoothScrollTo(nearest.block);
+  }
+
   function requestUpdate() {
     if (!ticking) {
       window.requestAnimationFrame(update);
       ticking = true;
     }
+
+    window.clearTimeout(scrollSettleTimer);
+    scrollSettleTimer = window.setTimeout(settleNearStory, 180);
   }
+
+  Object.entries(nodes).forEach(([name, node]) => {
+    if (!node || !storyByName[name]) return;
+    node.addEventListener("click", () => smoothScrollTo(storyByName[name]));
+  });
 
   window.addEventListener("scroll", requestUpdate, { passive: true });
   window.addEventListener("resize", requestUpdate);
