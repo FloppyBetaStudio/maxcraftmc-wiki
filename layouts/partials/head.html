@@ -33,6 +33,14 @@
 {{ else }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
 {{ end }}
+{{ with resources.Get "maxcraft-ui/maxcraft.css" }}
+{{ if hugo.IsProduction }}
+{{ $maxcraftUIStyles := . | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $maxcraftUIStyles.RelPermalink }}" integrity="{{ $maxcraftUIStyles.Data.Integrity }}" />
+{{ else }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" />
+{{ end }}
+{{ end }}
 {{ with resources.Get "css/site.css" }}
 {{ if hugo.IsProduction }}
 {{ $siteStyles := . | minify | fingerprint }}

@@ -12,6 +12,11 @@
   --mc-redstone: #d43c2f;
   --mc-ink: #101827;
   --mc-paper: #f7f4e8;
+  --font-sans: var(--mc-font-sans, "IBM Plex Sans", "Inter", "Segoe UI", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif);
+  --font-mono: var(--mc-font-mono, "IBM Plex Mono", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+  --default-font-family: var(--font-sans);
+  --default-mono-font-family: var(--font-mono);
+  font-family: var(--font-sans);
 }
 
 html {
@@ -331,6 +336,7 @@ body,
   animation: mc-float-particle 9s linear infinite;
   background: #ffffff;
   border: 2px solid rgb(0 0 0 / 0.16);
+  box-sizing: border-box;
   box-shadow: 0 0 18px rgb(255 255 255 / 0.7);
   display: block;
   height: 8px;
@@ -608,7 +614,7 @@ body,
 
 .mc-input-like strong {
   display: block;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: var(--font-mono);
   font-size: 1.05rem;
   overflow-wrap: anywhere;
 }

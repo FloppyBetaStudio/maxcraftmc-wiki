@@ -150,7 +150,7 @@ function createParticleField() {
   for (let index = 0; index < particleCount; index += 1) {
     const particle = document.createElement("span");
     particle.className = "mc-particle";
-    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.left = `${Math.random() * 96}%`;
     particle.style.animationDelay = `${Math.random() * 9}s`;
     particle.style.animationDuration = `${7 + Math.random() * 8}s`;
     particle.style.opacity = `${0.35 + Math.random() * 0.55}`;
