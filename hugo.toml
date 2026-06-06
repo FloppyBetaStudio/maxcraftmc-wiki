@@ -7,7 +7,6 @@ enableEmoji = true
 enableGitInfo = true
 enableRobotsTXT = true
 canonifyURLs = false
-darkmode_js = ['assets/js/darkmode.js']
 enableInlineShortcodes = true
 timeZone = 'Asia/Shanghai'
 
@@ -22,7 +21,6 @@ priority = 0.7
 [frontmatter]
 lastmod = ["lastmod", ":git", "date", "publishDate"]
 
-themesDir = "themes"
 contentDir = "content"
 
 [params]
@@ -222,10 +220,6 @@ for = "/**"
 Referrer-Policy = "strict-origin-when-cross-origin"
 
 [module]
-[[module.imports]]
-path = "tailbliss"
-ignoreConfig = true
-
 [[module.imports]]
 path = "github.com/FloppyBetaStudio/maxcraftmc-ui-svelte"
 

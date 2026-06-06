@@ -1,5 +1,18 @@
 const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+function initNavigation() {
+  const nav = document.querySelector("[data-mc-nav]");
+  const toggle = document.querySelector("[data-mc-nav-toggle]");
+  const menu = document.querySelector("[data-mc-nav-menu]");
+  if (!nav || !toggle || !menu) return;
+
+  toggle.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("mc-nav--open");
+    menu.classList.toggle("mc-nav__links--open", isOpen);
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  });
+}
+
 function revealOnScroll() {
   const items = document.querySelectorAll(".mc-hero__copy, .mc-launcher, .mc-section__wrap, .mc-page-hero__inner, .mc-page-content, .mc-footer__inner");
   if (motionQuery.matches) {
@@ -182,6 +195,7 @@ function decorateThemeToggle() {
 }
 
 revealOnScroll();
+initNavigation();
 driveScrollStory();
 createParticleField();
 decorateThemeToggle();

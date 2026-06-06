@@ -4,7 +4,7 @@
 
 给网站维护人员的日常操作说明见：[维护人员操作手册](docs/MAINTAINER_GUIDE.md)。
 
-本仓库的站点样式主要放在 `assets/css/site.css` 和 `assets/js/site.js`，页面结构主要看 `layouts/index.html`。Tailbliss 主题仍作为底座，日常改版尽量优先改本站覆盖文件，避免直接修改 `themes/tailbliss`。
+本仓库的站点样式主要放在 `assets/css/site.css` 和 `assets/js/site.js`，页面结构主要看 `layouts/index.html`。旧 Tailbliss 主题里仍需要的运行时资源已经 vendored 到 `assets/css/style.css`、`assets/js/darkmode.js` 和 `static/`，不再依赖外部主题；通用组件样式来自 `github.com/FloppyBetaStudio/maxcraftmc-ui-svelte` Hugo 模块。
 
 常用命令：
 

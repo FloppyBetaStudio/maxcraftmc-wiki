@@ -20,6 +20,7 @@ Thumbs.db
 *.swp
 *~
 output/
+themes/
 
 # IDE specific files
 .idea
