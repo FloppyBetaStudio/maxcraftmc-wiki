@@ -20,6 +20,9 @@ Thumbs.db
 *.swp
 *~
 output/
+outputs/
+test-results/
+playwright-report/
 themes/
 
 # IDE specific files
