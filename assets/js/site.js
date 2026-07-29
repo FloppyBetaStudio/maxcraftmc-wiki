@@ -194,9 +194,96 @@ function decorateThemeToggle() {
   });
 }
 
+function initCopyButtons() {
+  if (!navigator.clipboard?.writeText) return;
+
+  document.querySelectorAll("[data-mc-copy-address]").forEach((button) => {
+    button.hidden = false;
+    button.addEventListener("click", async () => {
+      const status = button.getAttribute("aria-describedby")
+        ? document.getElementById(button.getAttribute("aria-describedby"))
+        : null;
+
+      try {
+        await navigator.clipboard.writeText(button.dataset.mcCopyAddress);
+        if (status) status.textContent = `${button.dataset.mcCopyLabel}已复制。`;
+      } catch {
+        if (status) status.textContent = "复制失败，请手动选择地址复制。";
+      }
+    });
+  });
+}
+
+function initSearch() {
+  const form = document.querySelector("[data-mc-search]");
+  const results = document.querySelector("[data-mc-search-results]");
+  const status = document.querySelector("[data-mc-search-status]");
+  if (!form || !results || !status) return;
+
+  const input = form.elements.q;
+  let entries;
+
+  async function loadIndex() {
+    if (!entries) {
+      const response = await fetch(form.dataset.mcSearchIndex);
+      if (!response.ok) throw new Error(`Search index returned ${response.status}`);
+      entries = await response.json();
+    }
+    return entries;
+  }
+
+  async function search(query) {
+    const normalizedQuery = query.trim().toLocaleLowerCase();
+    results.replaceChildren();
+    if (!normalizedQuery) {
+      status.textContent = "请输入搜索关键词。";
+      return;
+    }
+
+    status.textContent = "正在搜索...";
+    try {
+      const index = await loadIndex();
+      const matches = index.filter((entry) =>
+        `${entry.title} ${entry.summary} ${entry.content}`.toLocaleLowerCase().includes(normalizedQuery)
+      ).slice(0, 30);
+
+      matches.forEach((entry) => {
+        const link = document.createElement("a");
+        const title = document.createElement("span");
+        const summary = document.createElement("small");
+        link.href = entry.url;
+        title.textContent = entry.title;
+        summary.textContent = entry.summary || "打开此页面查看详情。";
+        link.append(title, summary);
+        results.append(link);
+      });
+      status.textContent = matches.length ? `找到 ${matches.length} 条结果。` : "没有找到匹配内容，请尝试更短的关键词。";
+    } catch {
+      status.textContent = "搜索索引加载失败，请稍后重试或从导航浏览资料。";
+    }
+  }
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const query = input.value;
+    const url = new URL(window.location.href);
+    query.trim() ? url.searchParams.set("q", query.trim()) : url.searchParams.delete("q");
+    window.history.replaceState(null, "", url);
+    search(query);
+  });
+
+  const initialQuery = new URLSearchParams(window.location.search).get("q") || "";
+  if (initialQuery) {
+    input.value = initialQuery;
+    search(initialQuery);
+  }
+}
+
 revealOnScroll();
 initNavigation();
 driveScrollStory();
 createParticleField();
 decorateThemeToggle();
+initCopyButtons();
+initSearch();
 window.addEventListener("pointerdown", createClickBlock, { passive: true });

@@ -5,21 +5,19 @@ description: "MaxCraftMC 原版生存服务器 Java 版、基岩版连接地址�
 summary: "MaxCraftMC Java 版、基岩版连接地址、端口与QQ群入口。"
 categories: ["服务器资料"]
 tags: ["服务器地址", "Java版", "基岩版", "加入服务器"]
-keywords: ["MaxCraftMC服务器地址", "MaxCraft服务器地址", "mcje.iruanp.com", "mcbe.iruanp.com", "mc2.iruanp.com", "Minecraft Java服务器地址", "Minecraft基岩版服务器地址", "MaxCraftQQ群", "MaxCraft个人中心"]
+keywords: ["MaxCraftMC服务器地址", "MaxCraft服务器地址", "mcje.iruanp.com", "mcbe.iruanp.com", "mc1.iruanp.com", "Minecraft Java服务器地址", "Minecraft基岩版服务器地址", "MaxCraftQQ群", "MaxCraft个人中心"]
 ---
 MaxCraftMC 是开放、自由、包容的 Minecraft 原版生存服务器。服务器永不删档，永久存档，欢迎 Java 版和基岩版玩家上线。
 
 ## 服务器地址
 
-Java 版：`mcje.iruanp.com`
+{{< copy-address label="Java 版" address="mcje.iruanp.com" >}}
 
-备用地址：`mc2.iruanp.com:25565`
+{{< copy-address label="Java 版备用地址" address="mc1.iruanp.com:57829" >}}
 
-基岩版：`mcbe.iruanp.com`
+{{< copy-address label="基岩版地址和端口" address="mcbe.iruanp.com:57829" >}}
 
-基岩版端口：`25565`
-
-基岩版也可以尝试：[一键添加到服务器列表](minecraft:?addExternalServer=MaxCraftMC|mcbe.iruanp.com:25565)。
+基岩版也可以尝试：[一键添加到服务器列表](minecraft:?addExternalServer=MaxCraftMC|mcbe.iruanp.com:57829)。
 
 ## QQ 群
 

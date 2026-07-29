@@ -1,0 +1,12 @@
+{{- $label := .Get "label" -}}
+{{- $address := .Get "address" -}}
+{{- $statusID := printf "copy-address-status-%d" .Ordinal -}}
+<div class="mc-copy-address">
+    <span class="mc-copy-address__label">{{ $label }}</span>
+    <div class="mc-address-row">
+        <code>{{ $address }}</code>
+        <button class="mc-copy-button" type="button" hidden data-mc-copy-address="{{ $address }}" data-mc-copy-label="{{ $label }}" aria-label="复制{{ $label }}" aria-describedby="{{ $statusID }}">复制</button>
+    </div>
+    <span id="{{ $statusID }}" class="mc-copy-status" role="status" aria-live="polite"></span>
+    <noscript><small class="mc-copy-fallback">JavaScript 未启用，请手动选择上方地址复制。</small></noscript>
+</div>

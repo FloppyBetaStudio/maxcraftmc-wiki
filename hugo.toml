@@ -10,6 +10,9 @@ canonifyURLs = false
 enableInlineShortcodes = true
 timeZone = 'Asia/Shanghai'
 
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
 [pagination]
 pagerSize = 9
 
@@ -46,8 +49,8 @@ logo = "/images/site-logo.svg"
 name = "MaxCraftMC"
 java = "mcje.iruanp.com"
 bedrock = "mcbe.iruanp.com"
-bedrock_port = "25565"
-alternate = "mc2.iruanp.com:25565"
+bedrock_port = "57829"
+alternate = "mc1.iruanp.com:57829"
 qq_group = "953762913"
 qq_join_url = "https://qm.qq.com/q/b96Wv9PlMQ"
 player_center = "https://mpc.iruanp.com/"
@@ -146,6 +149,11 @@ weight = 8
 name = "历史"
 url = "/posts/history/timeline/"
 weight = 9
+
+[[menu.main]]
+name = "搜索"
+url = "/search/"
+weight = 10
 
 [[menu.footer]]
 name = "服务器地址"

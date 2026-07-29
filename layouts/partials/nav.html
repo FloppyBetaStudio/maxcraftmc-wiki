@@ -9,9 +9,10 @@
             <span></span>
             <span></span>
         </button>
-        <nav id="menuItems" class="mc-nav__links" data-mc-nav-menu>
+        <nav id="menuItems" class="mc-nav__links" data-mc-nav-menu aria-label="主导航">
             {{ range site.Menus.main }}
-            <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }}">{{ .Name }}</a>
+            {{ $isCurrent := or ($.IsMenuCurrent "main" .) (eq .URL $.RelPermalink) }}
+            <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }}"{{ if $isCurrent }} aria-current="page"{{ end }}>{{ .Name }}</a>
             {{ end }}
             {{ if not .Site.Params.Disable_theme_toggle }}
             <button id="theme-toggle" type="button" class="mc-nav__theme" aria-label="切换深色或浅色模式">

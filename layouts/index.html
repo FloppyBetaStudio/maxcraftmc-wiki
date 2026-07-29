@@ -1,5 +1,5 @@
 {{ define "main" }}
-<main class="mc-site" data-mc-scroll-world>
+<main id="main-content" class="mc-site" data-mc-scroll-world tabindex="-1">
     <nav class="mc-world-path" aria-label="首页区块快速滚动">
         <div class="mc-world-path__track"></div>
         <div class="mc-world-path__fill" data-mc-scroll-fill></div>
@@ -35,7 +35,7 @@
                             <h2 id="server-list-title">MaxCraftMC</h2>
                             <p>原版生存 · Java / Bedrock</p>
                         </div>
-                        <span class="mc-signal" aria-label="在线">▮▮▮▮▮</span>
+                        <span class="mc-server-status">地址已公布</span>
                     </div>
 
                     <div class="mc-edition-card">
@@ -45,7 +45,11 @@
                         </div>
                         <div class="mc-input-like">
                             <span>服务器地址</span>
-                            <strong>{{ .Site.Params.server.java }}</strong>
+                            <div class="mc-address-row">
+                                <strong>{{ .Site.Params.server.java }}</strong>
+                                <button class="mc-copy-button" type="button" hidden data-mc-copy-address="{{ .Site.Params.server.java }}" data-mc-copy-label="Java 版地址" aria-label="复制 Java 版服务器地址" aria-describedby="home-java-copy-status">复制</button>
+                            </div>
+                            <span id="home-java-copy-status" class="mc-copy-status" role="status" aria-live="polite"></span>
                         </div>
                         <div class="mc-input-like">
                             <span>备用地址</span>
@@ -56,18 +60,23 @@
                     <div class="mc-edition-card mc-edition-card--bedrock">
                         <div class="mc-edition-card__head">
                             <span>基岩版服务器</span>
-                            <small>仿 MC 添加服务器界面</small>
+                            <small>添加到基岩版服务器列表</small>
                         </div>
                         <div class="mc-bedrock-grid">
                             <div class="mc-input-like">
                                 <span>服务器地址</span>
-                                <strong>{{ .Site.Params.server.bedrock }}</strong>
+                                <div class="mc-address-row">
+                                    <strong>{{ .Site.Params.server.bedrock }}</strong>
+                                    <button class="mc-copy-button" type="button" hidden data-mc-copy-address="{{ .Site.Params.server.bedrock }}:{{ .Site.Params.server.bedrock_port }}" data-mc-copy-label="基岩版地址和端口" aria-label="复制基岩版服务器地址和端口" aria-describedby="home-bedrock-copy-status">复制地址和端口</button>
+                                </div>
+                                <span id="home-bedrock-copy-status" class="mc-copy-status" role="status" aria-live="polite"></span>
                             </div>
                             <div class="mc-input-like">
                                 <span>端口</span>
                                 <strong>{{ .Site.Params.server.bedrock_port }}</strong>
                             </div>
                         </div>
+                        <noscript><p class="mc-copy-fallback">JavaScript 未启用，请手动选择上方地址和端口复制。</p></noscript>
                         <a class="mc-button mc-button-bedrock" href="minecraft:?addExternalServer=MaxCraftMC|{{ .Site.Params.server.bedrock }}:{{ .Site.Params.server.bedrock_port }}">一键添加到基岩版</a>
                     </div>
                 </div>

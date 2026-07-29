@@ -97,7 +97,7 @@
 {{- $graph := slice $website $webPage $breadcrumbSchema -}}
 {{- if .IsHome -}}
 {{- $serverParams := .Site.Params.server -}}
-{{- $gameServer := dict "@type" "GameServer" "@id" (printf "%s#server" .Site.BaseURL) "name" $serverParams.name "url" .Site.BaseURL "description" .Site.Params.description "game" "Minecraft" "image" $imageURL "sameAs" (slice $serverParams.player_center $serverParams.qq_join_url) "contactPoint" (dict "@type" "ContactPoint" "email" $serverParams.contact_email "contactType" "server owner") "serverStatus" "Online" -}}
+{{- $gameServer := dict "@type" "GameServer" "@id" (printf "%s#server" .Site.BaseURL) "name" $serverParams.name "url" .Site.BaseURL "description" .Site.Params.description "game" "Minecraft" "image" $imageURL "sameAs" (slice $serverParams.player_center $serverParams.qq_join_url) "contactPoint" (dict "@type" "ContactPoint" "email" $serverParams.contact_email "contactType" "server owner") -}}
 {{- $graph = $graph | append $gameServer -}}
 {{- else if .IsPage -}}
 {{- $author := dict "@type" "Organization" "name" (.Params.author | default .Site.Params.author | default $siteTitle) -}}

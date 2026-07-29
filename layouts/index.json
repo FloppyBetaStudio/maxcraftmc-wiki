@@ -1,0 +1,5 @@
+{{- $entries := slice -}}
+{{- range where .Site.RegularPages "Params.noindex" "ne" true -}}
+    {{- $entries = $entries | append (dict "title" .Title "url" .RelPermalink "summary" (.Params.summary | default .Description | default .Summary | plainify) "content" (.Plain | htmlUnescape)) -}}
+{{- end -}}
+{{- $entries | jsonify -}}

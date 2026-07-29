@@ -1,0 +1,36 @@
+{{ define "main" }}
+<main id="main-content" class="mc-page" tabindex="-1">
+    <header class="mc-page-hero">
+        <div class="mc-page-hero__inner">
+            <p class="mc-kicker">Wiki index</p>
+            <h1>{{ .Title }}</h1>
+            <p>{{ .Description }}</p>
+        </div>
+    </header>
+    <div class="mc-page-shell">
+        <div class="mc-page-content">
+            {{ with .Site.Home.OutputFormats.Get "JSON" }}
+            <form class="mc-search" role="search" data-mc-search data-mc-search-index="{{ .RelPermalink }}">
+                <label for="wiki-search">搜索关键词</label>
+                <div class="mc-search__controls">
+                    <input id="wiki-search" name="q" type="search" autocomplete="off" enterkeyhint="search" placeholder="例如：领地、传送、服务器地址" />
+                    <button class="mc-button mc-button-primary" type="submit">搜索</button>
+                </div>
+                <p class="mc-search__status" data-mc-search-status role="status" aria-live="polite">输入关键词后开始搜索。</p>
+            </form>
+            {{ end }}
+            <div class="mc-route-list mc-route-list--articles" data-mc-search-results aria-label="搜索结果"></div>
+            <noscript>
+                <div class="mc-search__fallback">
+                    <p>站内搜索需要 JavaScript。你仍可从以下栏目浏览全部公开资料：</p>
+                    <div class="mc-route-list mc-route-list--articles">
+                        {{ range where .Site.Sections "Params.noindex" "!=" true }}
+                        <a href="{{ .RelPermalink }}"><span>{{ .Title }}</span><small>{{ .Description | default .Summary | plainify | truncate 72 }}</small></a>
+                        {{ end }}
+                    </div>
+                </div>
+            </noscript>
+        </div>
+    </div>
+</main>
+{{ end }}
