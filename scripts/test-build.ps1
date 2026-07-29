@@ -50,7 +50,7 @@ Assert-Match $homeOutput 'aria-label="复制 Java 版服务器地址"' "home cop
 Assert-Match $homeOutput '<noscript>' "home copy controls must include a no-JavaScript fallback"
 
 Assert-Match $address 'aria-current=page' "address navigation must identify the current page"
-Assert-Match $address 'data-mc-copy-address=mcbe\.iruanp\.com:57829' "address page must include a Bedrock copy control"
+Assert-Match $address 'data-mc-copy-address=mcbe\.iruanp\.com' "address page must include a Bedrock copy control"
 Assert-Match $address 'JavaScript 未启用' "address page must explain manual copying without JavaScript"
 
 Assert-Match $notFound '这片区块还没有生成' "404 output must use the MaxCraftMC branded message"
