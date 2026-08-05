@@ -1213,12 +1213,12 @@ body,
   color: #d1d5db;
 }
 
-.mc-page-content :where(a) {
+.mc-page-content :where(a):not(.mc-button) {
   color: #1d6f2a;
   font-weight: 800;
 }
 
-.dark .mc-page-content :where(a) {
+.dark .mc-page-content :where(a):not(.mc-button) {
   color: #86efac;
 }
 

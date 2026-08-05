@@ -120,3 +120,9 @@ keywords: ["MaxCraft Redstone规则", "Minecraft服务器特殊规则", "铁砧�
 - **修改说明**：
   玩家可以通过按住shift+对着载具（船和矿车）长按右键，将其举起。随后可以松手。
   如需将其放下，只需再次按下shift。
+
+---
+
+## 相关页面
+
+- [MaxCraftMC原版生存服务器特色](/redstone/features/)：了解商店系统、持久存档、Carpet、经济与安保措施等核心特色。

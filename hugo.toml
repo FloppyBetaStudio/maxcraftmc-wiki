@@ -190,6 +190,11 @@ name = "历史时间轴"
 url = "/posts/history/timeline/"
 weight = 7
 
+[[menu.footer]]
+name = "服务器介绍"
+url = "/detail/"
+weight = 8
+
 
 
 [markup.goldmark.renderer]
