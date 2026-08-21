@@ -20,18 +20,21 @@ function revealOnScroll() {
     return;
   }
 
-  const observer = new IntersectionObserver((entries) => {
+  const reveal = (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("mc-reveal--visible");
         observer.unobserve(entry.target);
       }
     });
-  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.14 });
+  };
+
+  const observer = new IntersectionObserver(reveal, { rootMargin: "0px 0px -8% 0px", threshold: 0.14 });
+  const pageContentObserver = new IntersectionObserver(reveal, { rootMargin: "0px 0px -8% 0px", threshold: 0 });
 
   items.forEach((item) => {
     item.classList.add("mc-reveal");
-    observer.observe(item);
+    (item.matches(".mc-page-content") ? pageContentObserver : observer).observe(item);
   });
 }
 
