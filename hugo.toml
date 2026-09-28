@@ -43,7 +43,7 @@ sogou_verify_code = ""
 [params.organization]
 name = "MaxCraftMC"
 url = "https://maxcraft.iruanp.com/"
-logo = "/images/site-logo.svg"
+logo = "/images/site-logo.png"
 
 [params.server]
 name = "MaxCraftMC"

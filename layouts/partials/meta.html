@@ -3,7 +3,7 @@
 {{- $rawDescription := .Description | default .Params.summary | default .Summary | default .Site.Params.description -}}
 {{- $description := $rawDescription | plainify | htmlUnescape | truncate 160 -}}
 {{- $canonical := .Permalink -}}
-{{- $image := .Params.featured_image | default .Site.Params.og_image | default "/images/site-logo.svg" -}}
+{{- $image := .Params.featured_image | default .Site.Params.og_image | default "/images/site-logo.png" -}}
 {{- $imageURL := "" -}}
 {{- if or (hasPrefix $image "http://") (hasPrefix $image "https://") -}}
 {{- $imageURL = $image -}}
@@ -77,7 +77,7 @@
 {{ end }}
 {{- $orgName := .Site.Params.organization.name | default .Site.Params.author | default $siteTitle -}}
 {{- $orgURL := .Site.Params.organization.url | default .Site.BaseURL -}}
-{{- $orgLogo := .Site.Params.organization.logo | default "/images/site-logo.svg" | absURL -}}
+{{- $orgLogo := .Site.Params.organization.logo | default "/images/site-logo.png" | absURL -}}
 {{- $publisher := dict "@type" "Organization" "name" $orgName "url" $orgURL "logo" (dict "@type" "ImageObject" "url" $orgLogo) -}}
 {{- $webPage := dict "@type" "WebPage" "@id" $canonical "url" $canonical "name" $pageTitle "description" $description "inLanguage" $siteLocale "isPartOf" (dict "@id" (printf "%s#website" .Site.BaseURL)) "publisher" $publisher -}}
 {{- if and .IsPage $hasDate -}}
